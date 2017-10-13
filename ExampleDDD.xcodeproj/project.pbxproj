@@ -137,12 +137,10 @@
 		CED4D63F1F90B29E00370FE2 /* ExampleDDD */ = {
 			isa = PBXGroup;
 			children = (
-				CED4D6401F90B29E00370FE2 /* AppDelegate.swift */,
-				CED4D6421F90B29E00370FE2 /* ViewController.swift */,
-				CED4D6441F90B29E00370FE2 /* Main.storyboard */,
-				CED4D6471F90B29E00370FE2 /* Assets.xcassets */,
-				CED4D6491F90B29E00370FE2 /* LaunchScreen.storyboard */,
-				CED4D64C1F90B29E00370FE2 /* Info.plist */,
+				CED4D67B1F90BFEC00370FE2 /* Support */,
+				CED4D67A1F90BFE400370FE2 /* Application */,
+				CED4D6791F90BFCE00370FE2 /* ViewController */,
+				CED4D6781F90BFC000370FE2 /* Resources */,
 			);
 			path = ExampleDDD;
 			sourceTree = "<group>";
@@ -163,6 +161,40 @@
 				CED4D6621F90B29E00370FE2 /* Info.plist */,
 			);
 			path = ExampleDDDUITests;
+			sourceTree = "<group>";
+		};
+		CED4D6781F90BFC000370FE2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CED4D6471F90B29E00370FE2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CED4D6791F90BFCE00370FE2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CED4D6421F90B29E00370FE2 /* ViewController.swift */,
+				CED4D6441F90B29E00370FE2 /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CED4D67A1F90BFE400370FE2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CED4D6401F90B29E00370FE2 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CED4D67B1F90BFEC00370FE2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CED4D6491F90B29E00370FE2 /* LaunchScreen.storyboard */,
+				CED4D64C1F90B29E00370FE2 /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
