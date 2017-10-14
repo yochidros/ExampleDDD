@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNE-2N-QjL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="JdX-vJ-otC">
+            <objects>
+                <viewController id="q3l-TZ-bgr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FL7-YN-hoq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="dWx-Lu-05V"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="OhP-2T-cpt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQs-ni-bc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="201"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="6VL-aB-MTu">
+            <objects>
+                <viewController id="Xy8-pz-iMy" customClass="ViewController" customModule="ExampleDDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oz7-tK-Iks">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="dCu-0k-N79"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="zfG-xJ-QE5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J74-o9-h9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="-464"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="lSK-jF-7Iz">
+            <objects>
+                <tabBarController id="cNE-2N-QjL" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HGU-B3-Cs1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Xy8-pz-iMy" kind="relationship" relationship="viewControllers" id="6tU-fz-kXv"/>
+                        <segue destination="q3l-TZ-bgr" kind="relationship" relationship="viewControllers" id="JKq-rt-tdO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYx-dp-7DF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="-132"/>
+        </scene>
+    </scenes>
+</document>
