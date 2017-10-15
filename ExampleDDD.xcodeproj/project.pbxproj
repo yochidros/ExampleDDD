@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7196EF6A1F9236EB00232198 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7196EF691F9236EB00232198 /* SearchViewController.storyboard */; };
 		7196EF6C1F9236F700232198 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196EF6B1F9236F700232198 /* SearchViewController.swift */; };
+		7196EF701F92397F00232198 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196EF6F1F92397F00232198 /* CustomButton.swift */; };
+		7196EF731F923A7E00232198 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF711F923A7E00232198 /* RealmSwift.framework */; };
+		7196EF741F923A7E00232198 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF721F923A7E00232198 /* Realm.framework */; };
 		CED4D6411F90B29E00370FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4D6401F90B29E00370FE2 /* AppDelegate.swift */; };
 		CED4D6461F90B29E00370FE2 /* TopTabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6441F90B29E00370FE2 /* TopTabbarViewController.storyboard */; };
 		CED4D6481F90B29E00370FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6471F90B29E00370FE2 /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		5790C41E619B9658496C0898 /* Pods_ExampleDDDUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleDDDUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7196EF691F9236EB00232198 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		7196EF6B1F9236F700232198 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7196EF6F1F92397F00232198 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		7196EF711F923A7E00232198 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		7196EF721F923A7E00232198 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		AD3702A1786EF803A66232D6 /* Pods-ExampleDDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDD/Pods-ExampleDDD.release.xcconfig"; sourceTree = "<group>"; };
 		BB16CA63DC4DFDCFA78A1BCA /* Pods-ExampleDDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDDTests/Pods-ExampleDDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		C049C4CA4261B2C9B74DF2D1 /* Pods-ExampleDDDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDDTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDDTests/Pods-ExampleDDDTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D808832A74B56E9014F9596A /* Pods_ExampleDDD.framework in Frameworks */,
+				7196EF731F923A7E00232198 /* RealmSwift.framework in Frameworks */,
+				7196EF741F923A7E00232198 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,9 +136,27 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		7196EF6D1F92395A00232198 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7196EF6E1F92397500232198 /* Button */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7196EF6E1F92397500232198 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				7196EF6F1F92397F00232198 /* CustomButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		A160513C96AC56F759A71B93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7196EF721F923A7E00232198 /* Realm.framework */,
+				7196EF711F923A7E00232198 /* RealmSwift.framework */,
 				EE4722B49CCA3D5CB950177D /* Pods_ExampleDDD.framework */,
 				059C9BEA6FBD71D827031CE3 /* Pods_ExampleDDDTests.framework */,
 				5790C41E619B9658496C0898 /* Pods_ExampleDDDUITests.framework */,
@@ -165,6 +191,7 @@
 			children = (
 				CED4D67B1F90BFEC00370FE2 /* Support */,
 				CED4D67A1F90BFE400370FE2 /* Application */,
+				7196EF6D1F92395A00232198 /* View */,
 				CED4D6791F90BFCE00370FE2 /* ViewController */,
 				CED4D6781F90BFC000370FE2 /* Resources */,
 			);
@@ -497,7 +524,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework<br />$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = "Embed Carthage Frameworks";
 			outputPaths = (
@@ -533,6 +561,7 @@
 			files = (
 				7196EF6C1F9236F700232198 /* SearchViewController.swift in Sources */,
 				CED4D6411F90B29E00370FE2 /* AppDelegate.swift in Sources */,
+				7196EF701F92397F00232198 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,8 +729,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E296FA364F;
-				INFOPLIST_FILE = ExampleDDD/Info.plist;
+				DEVELOPMENT_TEAM = X25KZ54NYC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ExampleDDD/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yochio.ExampleDDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -716,8 +749,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E296FA364F;
-				INFOPLIST_FILE = ExampleDDD/Info.plist;
+				DEVELOPMENT_TEAM = X25KZ54NYC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ExampleDDD/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yochio.ExampleDDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -806,7 +843,7 @@
 				CED4D6641F90B29E00370FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		CED4D6651F90B29E00370FE2 /* Build configuration list for PBXNativeTarget "ExampleDDD" */ = {
 			isa = XCConfigurationList;
@@ -815,7 +852,7 @@
 				CED4D6671F90B29E00370FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		CED4D6681F90B29E00370FE2 /* Build configuration list for PBXNativeTarget "ExampleDDDTests" */ = {
 			isa = XCConfigurationList;
@@ -824,7 +861,7 @@
 				CED4D66A1F90B29E00370FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		CED4D66B1F90B29E00370FE2 /* Build configuration list for PBXNativeTarget "ExampleDDDUITests" */ = {
 			isa = XCConfigurationList;
@@ -833,7 +870,7 @@
 				CED4D66D1F90B29E00370FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
