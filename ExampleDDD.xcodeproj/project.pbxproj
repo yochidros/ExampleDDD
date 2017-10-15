@@ -26,6 +26,8 @@
 		71AD78B61F9344F8004C8D05 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78B51F9344F8004C8D05 /* MockViewModel.swift */; };
 		71AD78B81F9358DC004C8D05 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF721F923A7E00232198 /* Realm.framework */; };
 		71AD78B91F9358DC004C8D05 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF711F923A7E00232198 /* RealmSwift.framework */; };
+		71AD78BB1F936256004C8D05 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD78BA1F936256004C8D05 /* SDWebImage.framework */; };
+		71AD78BD1F93625E004C8D05 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD78BC1F93625E004C8D05 /* APIKit.framework */; };
 		CED4D6411F90B29E00370FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4D6401F90B29E00370FE2 /* AppDelegate.swift */; };
 		CED4D6461F90B29E00370FE2 /* TopTabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6441F90B29E00370FE2 /* TopTabbarViewController.storyboard */; };
 		CED4D6481F90B29E00370FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6471F90B29E00370FE2 /* Assets.xcassets */; };
@@ -108,6 +110,8 @@
 		71AD78B01F9342D8004C8D05 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		71AD78B21F934484004C8D05 /* SearchViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		71AD78B51F9344F8004C8D05 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		71AD78BA1F936256004C8D05 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		71AD78BC1F93625E004C8D05 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		AD3702A1786EF803A66232D6 /* Pods-ExampleDDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDD/Pods-ExampleDDD.release.xcconfig"; sourceTree = "<group>"; };
 		BB16CA63DC4DFDCFA78A1BCA /* Pods-ExampleDDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDDTests/Pods-ExampleDDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		C049C4CA4261B2C9B74DF2D1 /* Pods-ExampleDDDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDDTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDDTests/Pods-ExampleDDDTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71AD78B81F9358DC004C8D05 /* Realm.framework in Frameworks */,
+				71AD78BD1F93625E004C8D05 /* APIKit.framework in Frameworks */,
 				71AD78B91F9358DC004C8D05 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +154,7 @@
 			files = (
 				71AD78991F93422A004C8D05 /* Domain.framework in Frameworks */,
 				D808832A74B56E9014F9596A /* Pods_ExampleDDD.framework in Frameworks */,
+				71AD78BB1F936256004C8D05 /* SDWebImage.framework in Frameworks */,
 				71AD78AA1F934243004C8D05 /* Infra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +315,8 @@
 		A160513C96AC56F759A71B93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71AD78BC1F93625E004C8D05 /* APIKit.framework */,
+				71AD78BA1F936256004C8D05 /* SDWebImage.framework */,
 				7196EF721F923A7E00232198 /* Realm.framework */,
 				7196EF711F923A7E00232198 /* RealmSwift.framework */,
 				EE4722B49CCA3D5CB950177D /* Pods_ExampleDDD.framework */,
@@ -738,6 +746,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 			);
 			name = "Embed Carthage frameworks";
 			outputPaths = (
@@ -782,15 +791,14 @@
 			files = (
 			);
 			inputPaths = (
-				"",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 			);
 			name = "Embed Carthage Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#/usr/local/bin/carthage copy-frameworks\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		D253B83E0B2449FE393A456C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
