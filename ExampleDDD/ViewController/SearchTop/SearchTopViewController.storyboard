@@ -94,27 +94,28 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repositoryCell" rowHeight="70" id="TL8-aF-eWr" customClass="SerachTableViewCell" customModule="ExampleDDD" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="84" id="TL8-aF-eWr" customClass="SearchTableViewCell" customModule="ExampleDDD" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TL8-aF-eWr" id="OpS-HL-Rth">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUO-gH-hOe">
-                                                    <rect key="frame" x="16" y="3.5" width="62.5" height="62.5"/>
+                                                    <rect key="frame" x="16" y="10.5" width="62.5" height="62.5"/>
+                                                    <color key="backgroundColor" red="0.13211495535714285" green="0.28395647321428569" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="gUO-gH-hOe" secondAttribute="height" multiplier="1:1" id="mpP-nv-rwR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8h-4x-Vj1">
-                                                    <rect key="frame" x="94.5" y="3" width="264.5" height="16"/>
+                                                    <rect key="frame" x="94.5" y="10" width="264.5" height="16"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piz-gg-cp8">
-                                                    <rect key="frame" x="94.5" y="27" width="264.5" height="14"/>
+                                                    <rect key="frame" x="94.5" y="34" width="264.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -133,12 +134,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="avatorImageView" destination="gUO-gH-hOe" id="vdV-IF-sT5"/>
-                                            <outlet property="descriptionLabel" destination="Piz-gg-cp8" id="d1h-YF-BxE"/>
-                                            <outlet property="nameLabel" destination="j8h-4x-Vj1" id="Ryz-Wm-0Q5"/>
+                                            <outlet property="avatorImageView" destination="gUO-gH-hOe" id="P2Q-be-MzE"/>
+                                            <outlet property="descriptionLabel" destination="Piz-gg-cp8" id="JGY-yG-zDO"/>
+                                            <outlet property="nameLabel" destination="j8h-4x-Vj1" id="Kv8-ro-79w"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="a90-A5-5gj" id="1jZ-qR-Jix"/>
+                                    <outlet property="delegate" destination="a90-A5-5gj" id="VGP-v1-u25"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -14,14 +14,18 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var serachBar: UISearchBar!
     
+    var viewModels = [RepositoryViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModels = MockViewModel.mockForSearchViewController()
         configureTableView()
     }
     
     private func configureTableView(){
-//        tableView.delegate = self
-//        talbeView.dataSource = self
-        tableView.register(cellType: SearchTableViewCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
     }
+
 }

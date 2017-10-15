@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class viewModel: NSObject {
-}
 
-final class SearchTableViewCell: UITableViewCell {
+final class SearchTableViewCell: UITableViewCell, SearchViewModelShowable {
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatorImageView: UIImageView!
-    private var model: viewModel?
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    func showViewModel(model: SearchViewModel) {
+        guard let model = model as? RepositoryViewModel else { fatalError() }
+        nameLabel.text = model.title
+        descriptionLabel.text = model.description
     }
 }
