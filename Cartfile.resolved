@@ -1,1 +1,4 @@
+github "antitypical/Result" "3.2.4"
+github "ishkawa/APIKit" "3.1.2"
 github "realm/realm-cocoa" "v2.10.2"
+github "rs/SDWebImage" "4.1.2"

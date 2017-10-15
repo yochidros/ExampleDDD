@@ -10,8 +10,6 @@
 		7196EF6A1F9236EB00232198 /* SearchTopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7196EF691F9236EB00232198 /* SearchTopViewController.storyboard */; };
 		7196EF6C1F9236F700232198 /* SearchTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196EF6B1F9236F700232198 /* SearchTopViewController.swift */; };
 		7196EF701F92397F00232198 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196EF6F1F92397F00232198 /* CustomButton.swift */; };
-		7196EF731F923A7E00232198 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF711F923A7E00232198 /* RealmSwift.framework */; };
-		7196EF741F923A7E00232198 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF721F923A7E00232198 /* Realm.framework */; };
 		71AD786D1F932043004C8D05 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD786C1F932043004C8D05 /* SearchTableViewCell.swift */; };
 		71AD78701F932237004C8D05 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD786F1F932237004C8D05 /* SearchViewController.swift */; };
 		71AD78721F93227A004C8D05 /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78711F93227A004C8D05 /* SearchViewController+TableView.swift */; };
@@ -26,6 +24,8 @@
 		71AD78B11F9342D8004C8D05 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78B01F9342D8004C8D05 /* RepositoryViewModel.swift */; };
 		71AD78B31F934484004C8D05 /* SearchViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78B21F934484004C8D05 /* SearchViewController+SearchBar.swift */; };
 		71AD78B61F9344F8004C8D05 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78B51F9344F8004C8D05 /* MockViewModel.swift */; };
+		71AD78B81F9358DC004C8D05 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF721F923A7E00232198 /* Realm.framework */; };
+		71AD78B91F9358DC004C8D05 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF711F923A7E00232198 /* RealmSwift.framework */; };
 		CED4D6411F90B29E00370FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4D6401F90B29E00370FE2 /* AppDelegate.swift */; };
 		CED4D6461F90B29E00370FE2 /* TopTabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6441F90B29E00370FE2 /* TopTabbarViewController.storyboard */; };
 		CED4D6481F90B29E00370FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6471F90B29E00370FE2 /* Assets.xcassets */; };
@@ -138,6 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AD78B81F9358DC004C8D05 /* Realm.framework in Frameworks */,
+				71AD78B91F9358DC004C8D05 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +149,6 @@
 			files = (
 				71AD78991F93422A004C8D05 /* Domain.framework in Frameworks */,
 				D808832A74B56E9014F9596A /* Pods_ExampleDDD.framework in Frameworks */,
-				7196EF731F923A7E00232198 /* RealmSwift.framework in Frameworks */,
-				7196EF741F923A7E00232198 /* Realm.framework in Frameworks */,
 				71AD78AA1F934243004C8D05 /* Infra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +458,7 @@
 				71AD789F1F934243004C8D05 /* Frameworks */,
 				71AD78A01F934243004C8D05 /* Headers */,
 				71AD78A11F934243004C8D05 /* Resources */,
+				71AD78B71F9357FF004C8D05 /* Embed Carthage frameworks */,
 			);
 			buildRules = (
 			);
@@ -729,6 +730,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExampleDDD/Pods-ExampleDDD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		71AD78B71F9357FF004C8D05 /* Embed Carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			name = "Embed Carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		A4F6233B93D2BC69CDF042A8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -765,15 +782,15 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"",
 			);
 			name = "Embed Carthage Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "#/usr/local/bin/carthage copy-frameworks\n";
+			showEnvVarsInLog = 0;
 		};
 		D253B83E0B2449FE393A456C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -948,6 +965,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Infra/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -972,6 +993,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Infra/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
