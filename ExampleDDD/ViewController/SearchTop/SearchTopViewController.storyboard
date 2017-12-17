@@ -103,7 +103,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUO-gH-hOe">
                                                     <rect key="frame" x="16" y="10.5" width="62.5" height="62.5"/>
-                                                    <color key="backgroundColor" red="0.13211495535714285" green="0.28395647321428569" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="gUO-gH-hOe" secondAttribute="height" multiplier="1:1" id="mpP-nv-rwR"/>
                                                     </constraints>

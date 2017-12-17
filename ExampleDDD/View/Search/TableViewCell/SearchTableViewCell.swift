@@ -6,9 +6,7 @@
 //  Copyright © 2017年 yochio. All rights reserved.
 //
 
-import Foundation
 import UIKit
-
 
 final class SearchTableViewCell: UITableViewCell, SearchViewModelShowable {
     
@@ -19,6 +17,7 @@ final class SearchTableViewCell: UITableViewCell, SearchViewModelShowable {
     
     func showViewModel(model: SearchViewModel) {
         guard let model = model as? RepositoryViewModel else { fatalError() }
+        avatorImageView.setImage(model.avatorURL)
         nameLabel.text = model.title
         descriptionLabel.text = model.description
     }

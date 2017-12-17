@@ -28,6 +28,9 @@
 		71AD78B91F9358DC004C8D05 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7196EF711F923A7E00232198 /* RealmSwift.framework */; };
 		71AD78BB1F936256004C8D05 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD78BA1F936256004C8D05 /* SDWebImage.framework */; };
 		71AD78BD1F93625E004C8D05 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD78BC1F93625E004C8D05 /* APIKit.framework */; };
+		71AD78C31F9365D1004C8D05 /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78C21F9365D1004C8D05 /* SearchUsecase.swift */; };
+		71AD78C51F936697004C8D05 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AD78C41F936697004C8D05 /* ExtensionUIImageView.swift */; };
+		71AD78C71F9367D5004C8D05 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD78C61F9367D5004C8D05 /* Result.framework */; };
 		CED4D6411F90B29E00370FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4D6401F90B29E00370FE2 /* AppDelegate.swift */; };
 		CED4D6461F90B29E00370FE2 /* TopTabbarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6441F90B29E00370FE2 /* TopTabbarViewController.storyboard */; };
 		CED4D6481F90B29E00370FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED4D6471F90B29E00370FE2 /* Assets.xcassets */; };
@@ -112,6 +115,9 @@
 		71AD78B51F9344F8004C8D05 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		71AD78BA1F936256004C8D05 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		71AD78BC1F93625E004C8D05 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		71AD78C21F9365D1004C8D05 /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
+		71AD78C41F936697004C8D05 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
+		71AD78C61F9367D5004C8D05 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		AD3702A1786EF803A66232D6 /* Pods-ExampleDDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDD/Pods-ExampleDDD.release.xcconfig"; sourceTree = "<group>"; };
 		BB16CA63DC4DFDCFA78A1BCA /* Pods-ExampleDDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDDTests/Pods-ExampleDDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		C049C4CA4261B2C9B74DF2D1 /* Pods-ExampleDDDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleDDDTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleDDDTests/Pods-ExampleDDDTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AD78C71F9367D5004C8D05 /* Result.framework in Frameworks */,
 				71AD78B81F9358DC004C8D05 /* Realm.framework in Frameworks */,
 				71AD78BD1F93625E004C8D05 /* APIKit.framework in Frameworks */,
 				71AD78B91F9358DC004C8D05 /* RealmSwift.framework in Frameworks */,
@@ -265,6 +272,7 @@
 			children = (
 				71AD78741F93235B004C8D05 /* ExtensionUITableView.swift */,
 				71AD78761F9323B0004C8D05 /* ExtensionNSObject.swift */,
+				71AD78C41F936697004C8D05 /* ExtensionUIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -281,6 +289,10 @@
 		71AD78931F93422A004C8D05 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				71AD78C81F936A91004C8D05 /* DI */,
+				71AD78C01F936541004C8D05 /* ValueObject */,
+				71AD78BF1F93653A004C8D05 /* Entity */,
+				71AD78BE1F93652F004C8D05 /* UseCase */,
 				71AD78941F93422A004C8D05 /* Domain.h */,
 				71AD78951F93422A004C8D05 /* Info.plist */,
 			);
@@ -312,9 +324,47 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		71AD78BE1F93652F004C8D05 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				71AD78C11F9365BB004C8D05 /* Search */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		71AD78BF1F93653A004C8D05 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		71AD78C01F936541004C8D05 /* ValueObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ValueObject;
+			sourceTree = "<group>";
+		};
+		71AD78C11F9365BB004C8D05 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				71AD78C21F9365D1004C8D05 /* SearchUsecase.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		71AD78C81F936A91004C8D05 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		A160513C96AC56F759A71B93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71AD78C61F9367D5004C8D05 /* Result.framework */,
 				71AD78BC1F93625E004C8D05 /* APIKit.framework */,
 				71AD78BA1F936256004C8D05 /* SDWebImage.framework */,
 				7196EF721F923A7E00232198 /* Realm.framework */,
@@ -555,6 +605,7 @@
 				TargetAttributes = {
 					71AD78911F93422A004C8D05 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					71AD78A21F934243004C8D05 = {
@@ -747,6 +798,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = "Embed Carthage frameworks";
 			outputPaths = (
@@ -825,6 +877,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AD78C31F9365D1004C8D05 /* SearchUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +897,7 @@
 				71AD786D1F932043004C8D05 /* SearchTableViewCell.swift in Sources */,
 				CED4D6411F90B29E00370FE2 /* AppDelegate.swift in Sources */,
 				71AD78721F93227A004C8D05 /* SearchViewController+TableView.swift in Sources */,
+				71AD78C51F936697004C8D05 /* ExtensionUIImageView.swift in Sources */,
 				71AD78B11F9342D8004C8D05 /* RepositoryViewModel.swift in Sources */,
 				7196EF701F92397F00232198 /* CustomButton.swift in Sources */,
 				71AD78751F93235B004C8D05 /* ExtensionUITableView.swift in Sources */,
@@ -917,6 +971,7 @@
 		71AD789C1F93422A004C8D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -931,6 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yochio.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -941,6 +997,7 @@
 		71AD789D1F93422A004C8D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1129,6 +1186,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 470BB30FBC48F4A52C0DC04E /* Pods-ExampleDDD.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X25KZ54NYC;
@@ -1149,6 +1207,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD3702A1786EF803A66232D6 /* Pods-ExampleDDD.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X25KZ54NYC;
